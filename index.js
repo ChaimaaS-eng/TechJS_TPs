@@ -24,13 +24,13 @@ async function startGame() {
 
   const bot = await getPokemon(randomPokemon);
 
-  console.log(`\n🤖 Bot chose: ${bot.name}`);
-  console.log("\n⚔️ Battle Start!");
+  console.log(`\n Bot chose: ${bot.name}`);
+  console.log("\n Battle Start!");
 
   while (player.hp > 0 && bot.hp > 0) {
 
-    console.log(`\n❤️ ${player.name}: ${player.hp}`);
-    console.log(`💀 ${bot.name}: ${bot.hp}`);
+    console.log(`\n ${player.name}: ${player.hp}`);
+    console.log(` ${bot.name}: ${bot.hp}`);
 
     const moveAnswer = await inquirer.prompt([
       {
@@ -50,12 +50,12 @@ async function startGame() {
     playTurn(player, bot, playerMove, botMove);
 
     if (player.hp <= 0) {
-      console.log("\n💀 You lose!");
+      console.log("\n You lose!");
       break;
     }
 
     if (bot.hp <= 0) {
-      console.log("\n🎉 You win!");
+      console.log("\n You win!");
       break;
     }
   }
